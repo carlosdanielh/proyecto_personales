@@ -9,4 +9,3 @@ class Window(tk.Tk):
         xpos = round((self.winfo_screenwidth() / 2) - (self.width / 2))
         ypos = (round((self.winfo_screenheight() / 2) - (self.height / 2)))-40
         self.geometry(f'{width}x{height}+{xpos}+{ypos}')
-        
