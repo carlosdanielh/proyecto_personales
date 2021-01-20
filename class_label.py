@@ -5,7 +5,7 @@ FONT_TITLE = ('Open Sans', 25, 'bold')
 FONT_METHOD = ('Open Sans', 16, 'bold')
 
 
-class Labels(tk.Label):
+class CustomLabel(tk.Label):
     def __init__(self, master):
         super().__init__()
         self.master = master
