@@ -10,7 +10,7 @@ class Buttons(tk.Button):
     def __init__(self, master):
         super().__init__()
         self.master = master
-    
+
     def randon_button(self, texto):
         self.button = tk.Button(self.master,
                                 width=25,
