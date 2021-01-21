@@ -3,7 +3,7 @@ from class_window import Window
 from class_label import CustomLabel
 from class_button import Buttons
 from class_listbox import CustomListbox
-
+from class_text import CustomText
 
 # ----------------------------------constant----------------------------------#
 FONT_TITLE = ('Open Sans', 20, 'bold')
@@ -11,7 +11,7 @@ BG_COLOR_ENTRY = '#C5C8CF'
 
 
 # --------------------------------- window -----------------------------------#
-window = Window(820, 600)
+window = Window(840, 600)
 window.title('today\'s study..')
 # --------------------------------frames--------------------------------------#
 frame_top = tk.Frame(window, pady=15)
@@ -46,13 +46,8 @@ button_method.randon_button('seek random')
 list_box = CustomListbox(frame_left)
 list_box.with_vertical_scroll()
 # --------------------------------Textbox-------------------------------------#
-text_box = tk.Text(frame_left,
-                   height=20,
-                   width=79,
-                   borderwidth=6,
-                   relief=tk.SUNKEN,
-                   bg=BG_COLOR_ENTRY)
-text_box.grid(column=2, row=0, sticky=tk.W)
+text_box = CustomText(frame_left)
+text_box.With_vertical_scroll()
 
 window.resizable(False, False)
 window.mainloop()
