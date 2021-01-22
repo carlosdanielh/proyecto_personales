@@ -23,5 +23,9 @@ class CustomLabel(tk.Label):
                               text=texto,
                               borderwidth=1,
                               relief=tk.SOLID,
-                              font=FONT_METHOD)
-        self.label.pack(ipadx=55)
+                              font=FONT_METHOD,
+                              width=16)
+        self.label.pack()
+
+    def set_text(self, text):
+        self.label.configure(text=text, width=16)
