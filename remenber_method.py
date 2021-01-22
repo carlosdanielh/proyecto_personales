@@ -101,7 +101,7 @@ structure = {
                         'union()',
                         'update()'],
 
-            'built_in:': [
+            'built in': [
                         'print()',
                         'print()',
                         'abs()',
