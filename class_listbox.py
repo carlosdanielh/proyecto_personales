@@ -4,8 +4,9 @@ import tkinter as tk
 BG_COLOR_ENTRY = '#C5C8CF'
 
 
-class CustomListbox():
+class CustomListbox(tk.Listbox):
     def __init__(self, master):
+        super().__init__()
         self.master = master
 
     def with_vertical_scroll(self):
@@ -21,3 +22,18 @@ class CustomListbox():
         self.listbox.configure(yscrollcommand=self.scrollbar.set)
         self.listbox.grid(column=0, row=0)
         self.scrollbar.grid(column=1, row=0, sticky=tk.W+tk.E+tk.N+tk.S)
+
+    def insert_list(self, lista):
+        for index, method in enumerate(lista):
+            self.listbox.insert(index, method)
+
+    def delete_all_items(self):  
+        self.listbox.delete(0, tk.END)
+
+    def has_items(self):
+        if self.listbox.size():
+            return True
+        return False
+
+    def delete_first_item(self):
+        self.listbox.delete(0, 0)
