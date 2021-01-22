@@ -20,3 +20,11 @@ class CustomText():
         self.text_box.configure(yscrollcommand=self.scrollbar.set)
         self.text_box.grid(column=2, row=0, sticky=tk.W)
         self.scrollbar.grid(column=3, row=0, sticky=tk.N+tk.S)
+
+    def is_empty(self):
+        if len(self.text_box.get('1.0', tk.END)) == 1:
+            return True
+        return False
+
+    def clear_texbox(self):
+        self.text_box.delete('0.0', tk.END)
