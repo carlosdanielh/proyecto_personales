@@ -37,3 +37,6 @@ class CustomListbox(tk.Listbox):
 
     def delete_first_item(self):
         self.listbox.delete(0, 0)
+
+    def get_all_items(self):
+        return list(self.listbox.get(0, tk.END))
