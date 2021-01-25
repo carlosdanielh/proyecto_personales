@@ -28,3 +28,14 @@ class CustomText():
 
     def clear_texbox(self):
         self.text_box.delete('0.0', tk.END)
+
+    def set_item_title(self, lista):
+        if len(lista) != 0:
+            #import pdb; pdb.set_trace()
+            item = lista[0].upper()+'\n'
+            self.text_box.tag_configure('center', justify='center')
+            self.text_box.insert(1.0, item, 'center')
+            self.text_box.focus_set()
+
+    def get_text(self):
+        return self.text_box.get(0.0, tk.END)  
