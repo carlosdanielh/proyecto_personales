@@ -120,8 +120,8 @@ os.system('cls')
 list_key_from_structure = list(structure.keys())
 estructura_aleatoria = random.choice(list_key_from_structure)
 
-print(f'Buenos dias Carlos!!! Hoy explicame, de la estructura de datos \
-{estructura_aleatoria.upper()}, estos 5 metodos:\n')
+# print(f'Buenos dias Carlos!!! Hoy explicame, de la estructura de datos \
+# {estructura_aleatoria.upper()}, estos 5 metodos:\n')
 
 list_all_structure_values = structure[estructura_aleatoria]
 set_method = set()
@@ -132,8 +132,8 @@ while not set_is_full:
     if len(set_method) == 5:
         set_is_full = True
 
-for values in set_method:
-    print(f'- {values}')
+# for values in set_method:
+#     # print(f'- {values}')
 
 len_methods_structure = len(list_all_structure_values)
-print(f'\nEn total son: {len_methods_structure}')
+# print(f'\nEn total son: {len_methods_structure}')
