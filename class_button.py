@@ -1,5 +1,5 @@
 import tkinter as tk
-from class_label import CustomLabel
+
 
 BG_COLOR_BUTTON = '#3C63B8'
 FG_COLOR_BUTTON = 'white'
@@ -21,7 +21,7 @@ class Buttons(tk.Button):
                                 command=function)
         self.button.pack(pady=5)
 
-    def create_medium_button(self,text,function):
+    def create_medium_button(self, text, function):
         self.button = tk.Button(self.master,
                                 width=6,
                                 font=FONT_BUTTON,
