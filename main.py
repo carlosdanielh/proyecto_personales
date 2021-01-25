@@ -5,9 +5,13 @@ from class_label import CustomLabel
 from class_button import Buttons
 from class_listbox import CustomListbox
 from class_text import CustomText
-from remenber_method import *
+from remenber_method import structure
+from time import strftime, localtime
+from class_file import TheFile
 import random
 
+
+cont = 0
 
 # ---------------------------------click seek---------------------------------#
 def click_seek():
@@ -35,24 +39,37 @@ def fill_listbox(selection):
 
     if list_box.has_items():
         button_save.enable_button()
+    text_box.set_item_title(list_box.get_all_items())
 
 
 # ---------------------------------save button--------------------------------#
 def save():
+    global cont
     if text_box.is_empty():
         msg.showinfo('Info', 'You can\'t save an empty textbox')
     else:
         answer = msg.askyesno('Sure?', 'Are you sure you want to save this'
                               'data?')
         if answer:
+            cont += 1
+            the_concept = text_box.get_text()
+            today_date = (label_time.get_text() + str(cont))[7:]
+            print(f'the concept {the_concept} and date {today_date}')
+            new_data = {
+                        today_date: {
+                            'concept': the_concept,
+                        }
+            }
+            save_data = TheFile(new_data)
+
             if list_box.has_items():
                 list_box.delete_first_item()
                 text_box.clear_texbox()
+                text_box.set_item_title(list_box.get_all_items())
                 if not list_box.has_items():
                     button_save.disable_button()
                     msg.showinfo('Info', 'Congratulations you\'ve finished the'
                                  'job for today, see you tomorrow...')
-
 
 # ----------------------------------constant----------------------------------#
 FONT_TITLE = ('Open Sans', 20, 'bold')
@@ -92,6 +109,9 @@ button_save = Buttons(frame_left)
 button_save.create_medium_button('save', save)
 button_save.disable_button()
 
+date = strftime('%d %m %y', localtime())
+label_time = CustomLabel(frame_left)
+label_time.time_label(date)
 
 list_box = CustomListbox(frame_left)
 list_box.with_vertical_scroll()
